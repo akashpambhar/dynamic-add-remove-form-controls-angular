@@ -1,0 +1,14 @@
+<div class="p-5">
+    <form [formGroup]="form1" class="w-50 m-auto">
+        <ng-container formArrayName="dynamic_field" *ngFor="let df of dynamic_field.controls; let i = index">
+            <div class="row mb-3">
+                <div class="col-9">
+                    <input type="text" class="form-control" id="{{'input' + (i+1)}}" placeholder="{{'Input ' + (i+1)}}" />
+                </div>
+                <button (click)="removeField(i)" class="btn btn-danger col-3">Remove</button>
+            </div>
+        </ng-container>
+
+        <button (click)="addField()" class="btn btn-primary">Add</button>
+    </form>
+</div>
